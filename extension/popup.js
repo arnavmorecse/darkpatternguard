@@ -1,8 +1,8 @@
 const $ = id => document.getElementById(id);
 const esc = s => String(s).replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
 const COLOURS = { high: "#D6293E", medium: "#E8710A", low: "#C99A06", privacy: "#7A4FD0" };
-// Change DEFAULT_APP_URL (or use Settings → Web app address) once the web app is deployed.
-const DEFAULT_APP_URL = "http://localhost:8501";
+// The online web app. Use Settings → Web app address to point at http://localhost:8501 instead.
+const DEFAULT_APP_URL = "https://darkpatternguard.streamlit.app";
 const DEFAULTS = { autoScan: true, showChip: true, minP: 0.5, pausedSites: [], appUrl: DEFAULT_APP_URL };
 const appBase = () => (cfg.appUrl || DEFAULT_APP_URL).replace(/\/+$/, "");
 const openApp = params => { params.set("model", "roberta"); chrome.tabs.create({ url: appBase() + "/?" + params.toString() }); };

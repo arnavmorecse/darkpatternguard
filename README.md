@@ -4,6 +4,8 @@
 
 <p align="center">Finds manipulative interface text on websites, says what kind of trick it is, and shows why.</p>
 
+<p align="center"><a href="https://darkpatternguard.streamlit.app"><b>Try it online →</b></a></p>
+
 ---
 
 Countdown timers that reset, "only 2 left" banners, decline buttons that read *"No thanks, I don't want to save money"*,
@@ -124,7 +126,7 @@ only the text you chose goes to the web app.
 
 ## Deploying the web app
 
-The app runs on [Streamlit Community Cloud](https://share.streamlit.io) straight from this repository:
+The live app at **https://darkpatternguard.streamlit.app** runs on [Streamlit Community Cloud](https://share.streamlit.io) straight from this repository:
 
 1. Attach `roberta_models.zip` to a GitHub release (`MAKE_MODELS_ZIP.bat` builds it from `models/roberta`).
 2. Create an app from this repo with `app.py` as the main file and Python 3.12.
