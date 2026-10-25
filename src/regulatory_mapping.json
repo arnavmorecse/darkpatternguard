@@ -1,0 +1,37 @@
+{
+  "_note": "Screening references only - NOT legal advice. Verified against primary or official sources on 25 Oct 2026. CCPA/CPRA dark-pattern provisions govern privacy choices and consent; general shopping-pressure tactics fall under consumer-protection law instead. A text flagged here is a candidate for human review, never a finding of violation.",
+  "frameworks": {
+    "CCPA_DP_DEF": {"law": "CCPA as amended by CPRA", "provision": "Cal. Civ. Code § 1798.140(l)",
+      "summary": "Defines a dark pattern as a user interface designed or manipulated with the substantial effect of subverting or impairing user autonomy, decision-making, or choice.",
+      "source": "https://www.cppa.ca.gov/pdf/enfadvisory202402.pdf"},
+    "CCPA_CONSENT": {"law": "CCPA as amended by CPRA", "provision": "Cal. Civ. Code § 1798.140(h)",
+      "summary": "Agreement obtained through the use of dark patterns does not constitute consent.",
+      "source": "https://www.cppa.ca.gov/pdf/enfadvisory202402.pdf"},
+    "CCPA_7004": {"law": "CCPA Regulations (CPPA)", "provision": "Cal. Code Regs. tit. 11, § 7004(a)-(c)",
+      "summary": "Methods for CCPA requests and consent must be easy to understand, offer symmetry in choice, avoid confusing language, avoid manipulative language or choice architecture, and be easy to execute; non-compliant methods may be dark patterns and consent obtained through them is invalid.",
+      "source": "https://law.cornell.edu/regulations/california/11-CCR-7004"},
+    "CPPA_ADVISORY": {"law": "CPPA Enforcement Advisory No. 2024-02 (non-binding guidance)", "provision": "Advisory 2024-02 (4 Sep 2024)",
+      "summary": "Guidance on avoiding dark patterns in privacy requests and consent: clear language and symmetrical choices; effect, not intent, is what matters.",
+      "source": "https://www.cppa.ca.gov/pdf/enfadvisory202402.pdf"},
+    "FTC_S5": {"law": "Federal Trade Commission Act", "provision": "15 U.S.C. § 45 (Section 5: unfair or deceptive acts or practices)",
+      "summary": "The FTC's 2022 staff report 'Bringing Dark Patterns to Light' groups false scarcity claims and fake countdown timers under design elements that induce false beliefs.",
+      "source": "https://www.ftc.gov/reports/bringing-dark-patterns-light"},
+    "CA_UCL_FAL": {"law": "California Unfair Competition Law / False Advertising Law", "provision": "Cal. Bus. & Prof. Code §§ 17200, 17500",
+      "summary": "State-level prohibition of unfair, deceptive or misleading business practices and advertising; relevant if a scarcity, urgency or popularity claim is untrue.",
+      "source": "https://leginfo.legislature.ca.gov/"},
+    "CA_HONEST_PRICING": {"law": "California SB 478 ('Honest Pricing Law', CLRA amendment)", "provision": "Cal. Civ. Code § 1770(a)(29), effective 1 Jul 2024",
+      "summary": "Prohibits advertising a price that excludes mandatory fees (drip pricing).",
+      "source": "https://oag.ca.gov/system/files/attachments/press-docs/SB%20478%20FAQ%20%28B%29.pdf"},
+    "CA_ARL": {"law": "California Automatic Renewal Law as amended by AB 2863", "provision": "Cal. Bus. & Prof. Code § 17600 et seq., amendments effective 1 Jul 2025",
+      "summary": "Requires express affirmative consent to automatic renewal and cancellation through the same medium used to subscribe.",
+      "source": "https://btlaw.com/en/insights/alerts/2025/california-expands-automatic-renewal-law-new-requirements-now-in-effect"}
+  },
+  "category_to_frameworks": {
+    "Urgency": ["FTC_S5", "CA_UCL_FAL"],
+    "Scarcity": ["FTC_S5", "CA_UCL_FAL"],
+    "Social Proof": ["FTC_S5", "CA_UCL_FAL"],
+    "Misdirection": ["FTC_S5", "CCPA_7004"],
+    "Other (rare)": ["FTC_S5", "CA_ARL", "CA_HONEST_PRICING"],
+    "Privacy choice / consent": ["CCPA_DP_DEF", "CCPA_CONSENT", "CCPA_7004", "CPPA_ADVISORY"]
+  }
+}

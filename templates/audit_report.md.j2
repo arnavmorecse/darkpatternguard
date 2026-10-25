@@ -1,0 +1,35 @@
+# DarkPatternGuard - Audit Report
+*Generated {{ r.generated }} · automated screening aid, not legal advice*
+
+**Text analysed:** "{{ r.text }}"
+
+## 1. Model output
+| Stage | Result | Confidence |
+|---|---|---|
+| Stage 1 - detection | {{ "Dark pattern" if r.stage1.label == 1 else "Not a dark pattern" }} | {{ "%.1f"|format(100*r.stage1.p_dark) }}% dark |
+{% if r.stage2 %}| Stage 2 - category | {{ r.stage2.category }} | {{ "%.1f"|format(100*r.stage2.confidence) }}% |
+{% endif %}
+Backend: {{ r.stage1.backend }}
+
+## 2. Overall risk: **{{ r.risk_level }}** (score {{ r.risk_score }})
+{% if r.model_rule_agreement is not none %}Model and rules {{ "agree" if r.model_rule_agreement else "disagree" }} on the category.{% endif %}
+
+## 3. Rule findings
+{% if r.rule_hits %}{% for h in r.rule_hits %}- **{{ h.id }} {{ h.name }}** ({{ h.category }}) - evidence: {{ h.evidence|join(", ") }}
+  - Reviewer question: {{ h.question }}
+{% endfor %}{% else %}No rule matched.
+{% endif %}
+{% if r.explanation %}
+## 4. LIME explanation (top words)
+| Word | Weight (towards "{{ r.explanation.class_name }}") |
+|---|---|
+{% for w, v in r.explanation.weights %}| {{ w }} | {{ "%+.3f"|format(v) }} |
+{% endfor %}{% endif %}
+## 5. Regulatory references for review
+{% if r.regulatory_references %}{% for ref in r.regulatory_references %}- **{{ ref.provision }}** - {{ ref.law }} *(relevant to {{ ref.for_category }})*: {{ ref.summary }} [source]({{ ref.source }})
+{% endfor %}{% else %}None.
+{% endif %}{% if not r.ccpa_relevant %}
+*CCPA/CPRA dark-pattern rules (Civ. Code § 1798.140(h),(l); 11 CCR § 7004) apply to privacy choices and consent. No privacy-choice indicator was found in this text.*
+{% endif %}
+---
+{{ r.disclaimer }}
