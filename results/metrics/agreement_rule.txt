@@ -1,0 +1,9 @@
+Loading weights:   0%|          | 0/201 [00:00<?, ?it/s]Loading weights:  12%|█▏        | 24/201 [00:00<00:00, 235.03it/s]Loading weights:  24%|██▍       | 48/201 [00:00<00:00, 179.03it/s]Loading weights:  33%|███▎      | 67/201 [00:00<00:00, 168.57it/s]Loading weights: 100%|██████████| 201/201 [00:00<00:00, 444.35it/s]
+Loading weights:   0%|          | 0/201 [00:00<?, ?it/s]Loading weights:  10%|█         | 21/201 [00:00<00:00, 198.38it/s]Loading weights:  20%|██        | 41/201 [00:00<00:00, 175.31it/s]Loading weights:  38%|███▊      | 76/201 [00:00<00:00, 229.63it/s]Loading weights: 100%|██████████| 201/201 [00:00<00:00, 452.96it/s]
+rule                                          acc   prec recall   FA miss
+TF-IDF alone @ 0.5                         0.9405 0.9884 0.8995    2   19
+TF-IDF alone @ 0.8                         0.8527 1.0000 0.7249    0   52
+RoBERTa alone @ 0.5                        0.9660 0.9890 0.9471    2   10
+RoBERTa alone @ 0.8                        0.9632 0.9889 0.9418    2   11
+Agreement: min(TF-IDF, RoBERTa) @ 0.5      0.9377 0.9941 0.8889    1   21
+Agreement: min(TF-IDF, RoBERTa) @ 0.8      0.8527 1.0000 0.7249    0   52

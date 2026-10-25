@@ -1,0 +1,121 @@
+{
+  "accuracy": 0.9629629629629629,
+  "precision_macro": 0.9646453089244851,
+  "recall_macro": 0.9182867655071181,
+  "f1_macro": 0.9365500708292471,
+  "f1_weighted": 0.9623834719072815,
+  "per_class": {
+    "Scarcity": {
+      "precision": 0.9855072463768116,
+      "recall": 0.9855072463768116,
+      "f1": 0.9855072463768116,
+      "support": 69
+    },
+    "Social Proof": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 41
+    },
+    "Urgency": {
+      "precision": 0.9166666666666666,
+      "recall": 0.9705882352941176,
+      "f1": 0.9428571428571428,
+      "support": 34
+    },
+    "Misdirection": {
+      "precision": 0.9210526315789473,
+      "recall": 0.9210526315789473,
+      "f1": 0.9210526315789473,
+      "support": 38
+    },
+    "Other (rare)": {
+      "precision": 1.0,
+      "recall": 0.7142857142857143,
+      "f1": 0.8333333333333334,
+      "support": 7
+    }
+  },
+  "confusion_matrix": [
+    [
+      68,
+      0,
+      0,
+      1,
+      0
+    ],
+    [
+      0,
+      41,
+      0,
+      0,
+      0
+    ],
+    [
+      1,
+      0,
+      33,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      3,
+      35,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      2,
+      5
+    ]
+  ],
+  "n_test": 189,
+  "roc_auc_macro_ovr": 0.9960532554893893,
+  "model": "RoBERTa-base fine-tuned",
+  "best_val_macro_f1": 0.9949428789032749,
+  "history": [
+    {
+      "epoch": 1,
+      "train_loss": 1.406679071187973,
+      "val_macro_f1": 0.9127453033764915
+    },
+    {
+      "epoch": 2,
+      "train_loss": 0.3208892276883125,
+      "val_macro_f1": 0.9603108442712402
+    },
+    {
+      "epoch": 3,
+      "train_loss": 0.09219887578859925,
+      "val_macro_f1": 0.9949428789032749
+    },
+    {
+      "epoch": 4,
+      "train_loss": 0.05173680439591408,
+      "val_macro_f1": 0.9768851059634265
+    },
+    {
+      "epoch": 5,
+      "train_loss": 0.03435911280103028,
+      "val_macro_f1": 0.9867285931889892
+    }
+  ],
+  "hyperparameters": {
+    "lr": 2e-05,
+    "batch": 16,
+    "epochs": 5,
+    "max_len": 64,
+    "weight_decay": 0.01,
+    "warmup_ratio": 0.1,
+    "class_weighted_loss": true,
+    "seed": 42
+  },
+  "train_minutes": 0.6,
+  "gpu": "Tesla T4",
+  "n_train": 785,
+  "n_val": 204
+}

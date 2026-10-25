@@ -1,0 +1,56 @@
+{
+  "TF-IDF alone @ 0.5": {
+    "accuracy": 0.9405099150141643,
+    "precision_dark": 0.9883720930232558,
+    "recall_dark": 0.8994708994708994,
+    "f1_macro": 0.9404793448151271,
+    "false_alarm_rate": 0.012195121951219513,
+    "false_alarms": 2,
+    "missed_dark": 19
+  },
+  "TF-IDF alone @ 0.8": {
+    "accuracy": 0.8526912181303116,
+    "precision_dark": 1.0,
+    "recall_dark": 0.7248677248677249,
+    "f1_macro": 0.8518243461414272,
+    "false_alarm_rate": 0.0,
+    "false_alarms": 0,
+    "missed_dark": 52
+  },
+  "RoBERTa alone @ 0.5": {
+    "accuracy": 0.9660056657223796,
+    "precision_dark": 0.988950276243094,
+    "recall_dark": 0.9470899470899471,
+    "f1_macro": 0.9659266409266409,
+    "false_alarm_rate": 0.012195121951219513,
+    "false_alarms": 2,
+    "missed_dark": 10
+  },
+  "RoBERTa alone @ 0.8": {
+    "accuracy": 0.9631728045325779,
+    "precision_dark": 0.9888888888888889,
+    "recall_dark": 0.9417989417989417,
+    "f1_macro": 0.9630969900203453,
+    "false_alarm_rate": 0.012195121951219513,
+    "false_alarms": 2,
+    "missed_dark": 11
+  },
+  "Agreement: min(TF-IDF, RoBERTa) @ 0.5": {
+    "accuracy": 0.9376770538243626,
+    "precision_dark": 0.9940828402366864,
+    "recall_dark": 0.8888888888888888,
+    "f1_macro": 0.9376645476144609,
+    "false_alarm_rate": 0.006097560975609756,
+    "false_alarms": 1,
+    "missed_dark": 21
+  },
+  "Agreement: min(TF-IDF, RoBERTa) @ 0.8": {
+    "accuracy": 0.8526912181303116,
+    "precision_dark": 1.0,
+    "recall_dark": 0.7248677248677249,
+    "f1_macro": 0.8518243461414272,
+    "false_alarm_rate": 0.0,
+    "false_alarms": 0,
+    "missed_dark": 52
+  }
+}

@@ -1,0 +1,76 @@
+{
+  "accuracy": 0.9631728045325779,
+  "precision_macro": 0.9625184756763704,
+  "recall_macro": 0.964398632081559,
+  "f1_macro": 0.96307679929195,
+  "f1_weighted": 0.9632101399039332,
+  "per_class": {
+    "Not Dark Pattern": {
+      "precision": 0.9415204678362573,
+      "recall": 0.9817073170731707,
+      "f1": 0.9611940298507463,
+      "support": 164
+    },
+    "Dark Pattern": {
+      "precision": 0.9835164835164835,
+      "recall": 0.9470899470899471,
+      "f1": 0.9649595687331537,
+      "support": 189
+    }
+  },
+  "confusion_matrix": [
+    [
+      161,
+      3
+    ],
+    [
+      10,
+      179
+    ]
+  ],
+  "n_test": 353,
+  "roc_auc": 0.9867563556587946,
+  "model": "RoBERTa-base fine-tuned",
+  "best_val_macro_f1": 0.9858906525573192,
+  "history": [
+    {
+      "epoch": 1,
+      "train_loss": 0.41944809438823494,
+      "val_macro_f1": 0.9717194570135747
+    },
+    {
+      "epoch": 2,
+      "train_loss": 0.10699656460370904,
+      "val_macro_f1": 0.9858906525573192
+    },
+    {
+      "epoch": 3,
+      "train_loss": 0.04358439418731384,
+      "val_macro_f1": 0.9830805865396666
+    },
+    {
+      "epoch": 4,
+      "train_loss": 0.01464809440737545,
+      "val_macro_f1": 0.9830805865396666
+    },
+    {
+      "epoch": 5,
+      "train_loss": 0.008816533271297902,
+      "val_macro_f1": 0.9830805865396666
+    }
+  ],
+  "hyperparameters": {
+    "lr": 2e-05,
+    "batch": 16,
+    "epochs": 5,
+    "max_len": 64,
+    "weight_decay": 0.01,
+    "warmup_ratio": 0.1,
+    "class_weighted_loss": false,
+    "seed": 42
+  },
+  "train_minutes": 1.1,
+  "gpu": "Tesla T4",
+  "n_train": 1643,
+  "n_val": 360
+}

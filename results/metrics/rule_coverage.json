@@ -1,0 +1,22 @@
+{
+  "fire_rate_on_dark": 0.6507936507936508,
+  "fire_rate_on_not_dark": 0.0,
+  "rule_precision_for_dark": 1.0,
+  "per_rule_fires": {
+    "MIS-01": {
+      "1": 21
+    },
+    "SCA-01": {
+      "1": 45
+    },
+    "SNK-01": {
+      "1": 1
+    },
+    "SOC-01": {
+      "1": 19
+    },
+    "URG-01": {
+      "1": 52
+    }
+  }
+}

@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Audit report – DarkPatternGuard</title><style>
+  :root { --ink:#1C1F24; --muted:#5A616B; --faint:#8A9099; --line:#E3E5E8; --panel:#F4F5F7; --red:#D6293E; --green:#1E8E5A;
+          --font:"Segoe UI Variable Text","Segoe UI",system-ui,-apple-system,Roboto,"Helvetica Neue",Arial,sans-serif; }
+  * { box-sizing:border-box; }
+  body { margin:0; background:var(--panel); color:var(--ink); font:15px/1.55 var(--font); }
+  .page { max-width:780px; margin:32px auto; background:#fff; border:1px solid var(--line); border-radius:10px; overflow:hidden; }
+  .top { display:flex; align-items:center; gap:10px; padding:14px 28px; border-bottom:1px solid var(--line); }
+  .logo { width:22px; height:22px; border-radius:5px; background:var(--red); display:grid; place-items:center; }
+  .top .name { font-weight:600; }
+  .top .date { margin-left:auto; color:var(--muted); font-size:13px; }
+  .head { padding:28px 28px 8px; }
+  h1 { font-size:13px; font-weight:600; color:var(--muted); margin:0 0 8px; }
+  blockquote { margin:0; font-size:22px; line-height:1.35; font-weight:600; letter-spacing:-.01em; max-width:62ch; }
+  .verdict { display:grid; grid-template-columns:repeat(3,1fr); margin:24px 28px 8px; border:1px solid var(--line); border-radius:8px; }
+  .verdict > div { padding:14px 16px; }
+  .verdict > div + div { border-left:1px solid var(--line); }
+  .k { color:var(--muted); font-size:13px; }
+  .v { font-size:17px; font-weight:600; margin-top:2px; }
+  .sub { color:var(--muted); font-size:13px; margin-top:1px; font-variant-numeric:tabular-nums; }
+  .pill { display:inline-block; padding:2px 10px; border-radius:12px; color:#fff; font-size:13px; font-weight:600; }
+  section { padding:20px 28px; border-top:1px solid var(--line); }
+  section:first-of-type { border-top:0; }
+  h2 { font-size:16px; margin:0 0 4px; }
+  .lead { color:var(--muted); font-size:14px; margin:0 0 14px; max-width:68ch; }
+  .bars { display:grid; grid-template-columns:120px 1fr 1fr 56px; gap:6px 10px; align-items:center; font-size:14px; }
+  .bars .w { text-align:right; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
+  .bars .neg, .bars .pos { height:12px; display:flex; }
+  .bars .neg { justify-content:flex-end; border-right:1px solid var(--faint); }
+  .bars .neg i { background:#C4C9D0; border-radius:2px 0 0 2px; }
+  .bars .pos i { background:var(--red); border-radius:0 2px 2px 0; }
+  .bars .n { color:var(--muted); font-variant-numeric:tabular-nums; font-size:13px; }
+  .axis { display:grid; grid-template-columns:120px 1fr 1fr 56px; gap:10px; color:var(--faint); font-size:12px; margin-top:6px; }
+  .axis span:nth-child(2) { text-align:right; }
+  .rule { padding:12px 14px; border:1px solid var(--line); border-left:3px solid var(--rc); border-radius:6px; margin-bottom:10px; }
+  .rule .title { font-weight:600; }
+  .rule .cat { color:var(--muted); font-weight:400; }
+  .rule .ev { margin-top:4px; font-size:14px; }
+  .rule mark { background:#FCE4E7; color:var(--ink); padding:0 3px; border-radius:3px; }
+  .rule .q { color:var(--muted); font-size:14px; margin-top:2px; }
+  .agree { font-size:14px; margin-top:4px; color:var(--muted); }
+  .refs { list-style:none; margin:0; padding:0; }
+  .refs li { padding:10px 0; border-top:1px solid var(--line); }
+  .refs li:first-child { border-top:0; padding-top:0; }
+  .refs .prov { font-weight:600; }
+  .refs .law { color:var(--muted); font-size:14px; }
+  .refs p { margin:4px 0 0; font-size:14px; max-width:68ch; }
+  .refs a { color:var(--red); font-size:13px; }
+  .empty { color:var(--muted); font-size:14px; }
+  .note { background:var(--panel); border-radius:6px; padding:10px 12px; font-size:13px; color:var(--muted); margin-top:12px; }
+  footer { padding:16px 28px 22px; border-top:1px solid var(--line); color:var(--faint); font-size:12.5px; }
+  @media (max-width:640px) {
+    .page { margin:0; border-radius:0; border-left:0; border-right:0; }
+    .verdict { grid-template-columns:1fr; } .verdict > div + div { border-left:0; border-top:1px solid var(--line); }
+    .bars, .axis { grid-template-columns:90px 1fr 1fr 48px; }
+  }
+  @media print { body { background:#fff; } .page { margin:0; border:0; } a { color:var(--ink); } }
+</style></head>
+<body><div class="page">
+  <div class="top">
+    <span class="logo"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round"><circle cx="10" cy="10" r="6"/><path d="M15 15l5 5"/></svg></span>
+    <span class="name">DarkPatternGuard</span>
+    <span class="date">Audit report, 25 Oct 2026, 22:26</span>
+  </div>
+
+  <div class="head">
+    <h1>Text analysed</h1>
+    <blockquote>“No thanks, I don't want to save money”</blockquote>
+  </div>
+
+  <div class="verdict">
+    <div><div class="k">Detection</div>
+      <div class="v">Likely a dark pattern</div>
+      <div class="sub">100% likely</div></div>
+    <div><div class="k">Type</div>
+      <div class="v">Misdirection</div>
+      <div class="sub">99% confidence</div></div>
+    <div><div class="k">Review priority</div>
+      <div class="v"><span class="pill" style="background:#E8710A">Medium</span></div>
+      <div class="sub">Review recommended</div></div>
+  </div>
+
+  
+  <section>
+    <h2>Which words drove the decision</h2>
+    <p class="lead">LIME removes words at random and watches how the prediction changes. Red bars push towards “Dark Pattern”, grey bars push away from it. This is a local approximation, not proof of cause.</p>
+    <div class="bars">
+      <span class="w">save</span>
+      <span class="neg"></span>
+      <span class="pos"><i style="width:100.0%"></i></span>
+      <span class="n">+0.098</span>
+      <span class="w">No</span>
+      <span class="neg"></span>
+      <span class="pos"><i style="width:88.63486228858264%"></i></span>
+      <span class="n">+0.086</span>
+      <span class="w">want</span>
+      <span class="neg"></span>
+      <span class="pos"><i style="width:85.73968655820708%"></i></span>
+      <span class="n">+0.084</span>
+      <span class="w">I</span>
+      <span class="neg"></span>
+      <span class="pos"><i style="width:62.087054958839204%"></i></span>
+      <span class="n">+0.061</span>
+      <span class="w">money</span>
+      <span class="neg"></span>
+      <span class="pos"><i style="width:60.588241648723574%"></i></span>
+      <span class="n">+0.059</span>
+      <span class="w">don</span>
+      <span class="neg"></span>
+      <span class="pos"><i style="width:58.71779092468852%"></i></span>
+      <span class="n">+0.057</span>
+      <span class="w">thanks</span>
+      <span class="neg"></span>
+      <span class="pos"><i style="width:44.97600700201836%"></i></span>
+      <span class="n">+0.044</span>
+      <span class="w">t</span>
+      <span class="neg"></span>
+      <span class="pos"><i style="width:17.797029548273198%"></i></span>
+      <span class="n">+0.017</span>
+      
+    </div>
+    <div class="axis"><span></span><span>away from</span><span>towards</span><span></span></div>
+  </section>
+  
+
+  <section>
+    <h2>Rule findings</h2>
+    <p class="lead">Fixed, readable rules that look for known pressure tactics. They run alongside the model as a second opinion.</p>
+    <div class="rule" style="--rc:#E8710A">
+      <div class="title">Confirmshaming / guilt-laden decline option <span class="cat">(Misdirection)</span></div>
+      <div class="ev">Matched <mark>No thanks, I</mark> <mark>I don't want</mark> </div>
+      <div class="q">To check: Does the decline option use guilt or shame to steer the choice?</div>
+    </div>
+    
+    
+    <div class="agree">The model and the rules point to the same type of pattern.</div>
+    
+  </section>
+
+  <section>
+    <h2>Regulations to review</h2>
+    <p class="lead">Laws and guidance a reviewer may want to check this against. A match here is a prompt for human review, not a finding of a violation.</p>
+    
+    <ul class="refs">
+      
+      <li><div class="prov">15 U.S.C. § 45 (Section 5: unfair or deceptive acts or practices)</div>
+        <div class="law">Federal Trade Commission Act, relevant to Misdirection</div>
+        <p>The FTC's 2022 staff report 'Bringing Dark Patterns to Light' groups false scarcity claims and fake countdown timers under design elements that induce false beliefs.</p>
+        <a href="https://www.ftc.gov/reports/bringing-dark-patterns-light">Source</a></li>
+      
+      <li><div class="prov">Cal. Code Regs. tit. 11, § 7004(a)-(c)</div>
+        <div class="law">CCPA Regulations (CPPA), relevant to Misdirection</div>
+        <p>Methods for CCPA requests and consent must be easy to understand, offer symmetry in choice, avoid confusing language, avoid manipulative language or choice architecture, and be easy to execute; non-compliant methods may be dark patterns and consent obtained through them is invalid.</p>
+        <a href="https://law.cornell.edu/regulations/california/11-CCR-7004">Source</a></li>
+      
+    </ul>
+    
+    
+    <div class="note">California’s privacy-law rules on dark patterns (Civ. Code § 1798.140(h), (l) and 11 CCR § 7004) cover privacy choices and consent. Nothing in this text looked like a privacy choice.</div>
+    
+  </section>
+
+  <footer>Model: Fine-tuned RoBERTa-base. Screening references only - NOT legal advice. Verified against primary or official sources on 25 Oct 2026. CCPA/CPRA dark-pattern provisions govern privacy choices and consent; general shopping-pressure tactics fall under consumer-protection law instead. A text flagged here is a candidate for human review, never a finding of violation.</footer>
+</div></body></html>
