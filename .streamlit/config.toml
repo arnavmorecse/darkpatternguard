@@ -1,0 +1,27 @@
+# DarkPatternGuard app theme. Viewers switch between light and dark in the top-right menu:
+# three dots -> Settings -> Choose app theme (Light, Dark, or Use system setting).
+
+[theme]
+font = "sans serif"
+
+[theme.light]
+primaryColor = "#D6293E"
+backgroundColor = "#FFFFFF"
+secondaryBackgroundColor = "#F4F5F7"
+textColor = "#1C1F24"
+
+[theme.dark]
+primaryColor = "#F0475C"            # a touch brighter so the red keeps its contrast on a dark background
+backgroundColor = "#17191D"
+secondaryBackgroundColor = "#22252B"
+textColor = "#E6E8EB"
+
+[server]
+fileWatcherType = "none"
+headless = true
+
+[browser]
+gatherUsageStats = false
+
+# [client] toolbarMode is left at its default ("auto"): the Deploy button and the full menu show when the
+# app runs on this computer. Set toolbarMode = "viewer" to hide only the developer options (Deploy, Clear cache).
