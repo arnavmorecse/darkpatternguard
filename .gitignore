@@ -1,0 +1,17 @@
+# Fine-tuned RoBERTa weights (about 480 MB): attached to the GitHub release instead, see README
+models/roberta/
+roberta_outputs/
+roberta_outputs.zip
+deploy_release/
+deploy_streamlit/
+models/tfidf/.trained_here
+
+__pycache__/
+*.pyc
+*.bak
+.venv/
+venv/
+.ipynb_checkpoints/
+.DS_Store
+Thumbs.db
+.streamlit/secrets.toml
